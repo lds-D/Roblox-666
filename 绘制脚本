@@ -1,0 +1,158 @@
+-- Roblox Ninja ESP 绘制脚本
+-- 功能：显示血量、名字、线条、位置框、距离，死亡时不会消失
+
+-- 初始化变量
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+-- 创建绘制函数
+local function CreateESP(player)
+    -- 检查玩家是否有效
+    if not player.Character then return end
+    
+    -- 创建ESP元素
+    local ESP = {
+        Box = Drawing.new("Square"),
+        Name = Drawing.new("Text"),
+        HealthBar = Drawing.new("Square"),
+        HealthText = Drawing.new("Text"),
+        Line = Drawing.new("Line"),
+        Distance = Drawing.new("Text")
+    }
+    
+    -- 初始化ESP元素属性
+    ESP.Box.Visible = false
+    ESP.Box.Color = Color3.fromRGB(255, 255, 255)
+    ESP.Box.Thickness = 1
+    ESP.Box.Filled = false
+    
+    ESP.Name.Visible = false
+    ESP.Name.Color = Color3.fromRGB(255, 255, 255)
+    ESP.Name.Size = 14
+    ESP.Name.Center = true
+    ESP.Name.Outline = true
+    
+    ESP.HealthBar.Visible = false
+    ESP.HealthBar.Filled = true
+    ESP.HealthBar.Thickness = 1
+    
+    ESP.HealthText.Visible = false
+    ESP.HealthText.Color = Color3.fromRGB(255, 255, 255)
+    ESP.HealthText.Size = 14
+    ESP.HealthText.Outline = true
+    
+    ESP.Line.Visible = false
+    ESP.Line.Color = Color3.fromRGB(255, 255, 255)
+    ESP.Line.Thickness = 1
+    
+    ESP.Distance.Visible = false
+    ESP.Distance.Color = Color3.fromRGB(255, 255, 255)
+    ESP.Distance.Size = 14
+    ESP.Distance.Outline = true
+    
+    -- 更新ESP函数
+    local function UpdateESP()
+        local connection
+        connection = RunService.Heartbeat:Connect(function()
+            if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character:FindFirstChild("HumanoidRootPart") then
+                local character = player.Character
+                local humanoid = character.Humanoid
+                local rootPart = character.HumanoidRootPart
+                
+                -- 计算屏幕位置
+                local position, onScreen = Camera:WorldToViewportPoint(rootPart.Position)
+                
+                if onScreen then
+                    -- 计算距离
+                    local distance = (rootPart.Position - Camera.CFrame.Position).Magnitude
+                    
+                    -- 设置方框
+                    local scaleFactor = 1 / (distance * 0.1)
+                    local width = 50 * scaleFactor
+                    local height = 80 * scaleFactor
+                    
+                    ESP.Box.Size = Vector2.new(width, height)
+                    ESP.Box.Position = Vector2.new(position.X - width/2, position.Y - height/2)
+                    ESP.Box.Visible = true
+                    
+                    -- 设置名字
+                    ESP.Name.Text = player.Name
+                    ESP.Name.Position = Vector2.new(position.X, position.Y - height/2 - 20)
+                    ESP.Name.Visible = true
+                    
+                    -- 设置血条
+                    local healthPercent = humanoid.Health / humanoid.MaxHealth
+                    local healthBarHeight = height * healthPercent
+                    local healthBarY = position.Y + height/2 - healthBarHeight
+                    
+                    ESP.HealthBar.Size = Vector2.new(3, healthBarHeight)
+                    ESP.HealthBar.Position = Vector2.new(position.X - width/2 - 5, healthBarY)
+                    ESP.HealthBar.Color = Color3.fromRGB(255 * (1 - healthPercent), 255 * healthPercent, 0)
+                    ESP.HealthBar.Visible = true
+                    
+                    -- 设置血量文本
+                    ESP.HealthText.Text = tostring(math.floor(humanoid.Health)) .. "/" .. tostring(math.floor(humanoid.MaxHealth))
+                    ESP.HealthText.Position = Vector2.new(position.X - width/2 - 10, healthBarY)
+                    ESP.HealthText.Visible = true
+                    
+                    -- 设置连线
+                    ESP.Line.From = Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y)
+                    ESP.Line.To = Vector2.new(position.X, position.Y + height/2)
+                    ESP.Line.Visible = true
+                    
+                    -- 设置距离
+                    ESP.Distance.Text = tostring(math.floor(distance)) .. "m"
+                    ESP.Distance.Position = Vector2.new(position.X, position.Y + height/2 + 5)
+                    ESP.Distance.Visible = true
+                else
+                    -- 不在屏幕上时隐藏所有元素
+                    ESP.Box.Visible = false
+                    ESP.Name.Visible = false
+                    ESP.HealthBar.Visible = false
+                    ESP.HealthText.Visible = false
+                    ESP.Line.Visible = false
+                    ESP.Distance.Visible = false
+                end
+            else
+                -- 玩家死亡时仍然显示
+                ESP.Box.Visible = true
+                ESP.Name.Visible = true
+                ESP.HealthBar.Visible = false
+                ESP.HealthText.Text = "DEAD"
+                ESP.HealthText.Position = Vector2.new(ESP.Box.Position.X + ESP.Box.Size.X/2, ESP.Box.Position.Y + ESP.Box.Size.Y/2)
+                ESP.HealthText.Visible = true
+                ESP.Line.Visible = true
+                ESP.Distance.Visible = true
+            end
+        end)
+        
+        -- 当玩家离开游戏时清理ESP
+        player:GetPropertyChangedSignal("Parent"):Connect(function()
+            if not player.Parent then
+                connection:Disconnect()
+                for _, drawing in pairs(ESP) do
+                    drawing:Remove()
+                end
+            end
+        end)
+    end
+    
+    -- 开始更新ESP
+    UpdateESP()
+end
+
+-- 为所有玩家创建ESP
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        CreateESP(player)
+    end
+end
+
+-- 为新加入的玩家创建ESP
+Players.PlayerAdded:Connect(function(player)
+    if player ~= LocalPlayer then
+        CreateESP(player)
+    end
+end)
