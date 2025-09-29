@@ -1,0 +1,28 @@
+local garbage = getgc(true)
+
+for i, table in pairs(garbage) do
+if type(table) == "table" and rawget(table, "Spread") then
+rawset(table, "Spread", 0)
+end
+end
+local garbage = getgc(true)
+
+for i, table in pairs(garbage) do
+if type(table) == "table" and rawget(table, "FireRate") then
+rawset(table, "FireRate", 0.000001)
+end
+end
+local garbage = getgc(true)
+
+for i, table in pairs(garbage) do
+if type(table) == "table" and rawget(table, "ReloadTime") then
+rawset(table, "ReloadTime", 0)
+end
+end
+local garbage = getgc(true)
+
+for i, table in pairs(garbage) do
+if type(table) == "table" and rawget(table, "AmmoPerClip") then
+rawset(table, "AmmoPerClip", 9999999999999999999999)
+end
+end
