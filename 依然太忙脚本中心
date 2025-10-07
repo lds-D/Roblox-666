@@ -15,7 +15,7 @@ print("反挂机开启")
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/dUiCrXYP"))()
 local Window = OrionLib:MakeWindow({Name = "依然太忙脚本中心（禁止倒卖）", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用依然太忙脚本中心", ConfigFolder = "欢迎使用少羽中心"})
 local about = Window:MakeTab({
-    Name = "依然太忙脚本禁止倒卖",
+    Name = "公告",
     Icon = "rbxassetid://93566402708060",
     PremiumOnly = false
 })
@@ -74,10 +74,10 @@ Tab:AddButton({
     for i,v in pairs (game.Players:GetChildren()) do
     wait()
     for i,b in pairs (v.Backpack:GetChildren()) do
-    b.Parent = game.Players.LocalPlayer.       Backpack
+    b.Parent = game.Players.LocalPlayer.Backpack
     end
     end
-      end
+    end
 })
 
 Tab:AddButton({
