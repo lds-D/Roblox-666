@@ -322,7 +322,7 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
-	Name = "监狱人生",
+	Name = "娱乐脚本",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
