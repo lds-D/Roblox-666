@@ -545,18 +545,14 @@ end
 })
 
 local Tab = Window:MakeTab({
-	Name = "少羽赞助人员：少羽牛逼666-@   -无敌少羽大王-泷",
+	Name = "死💀铁轨",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
 
-local Section = Tab:AddSection({
-	Name = "源码提供：少羽牛逼666、无敌 @    、少羽大王、技术指导：泷、脚本提供：晓空"
+Tab:AddButton({
+	Name = "死铁轨脚本(中文)",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
+    end
 })
-
-local Tab = Window:MakeTab({
-	Name = "④铁轨",
-	Icon = "rbxassetid://93566402708060",
-	PremiumOnly = false
-})
-
