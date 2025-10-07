@@ -53,6 +53,14 @@ loadstring(game:HttpGet(('https://github.com/DevSloPo/DVES/raw/main/XK%20Hub')))
   	end
 })
 
+Tab:AddButton({
+    Name = "XA Hub",	
+    Callback = function()
+loadstring(game:HttpGet("https://raw.gitcode.com/Xingtaiduan/Scripts/raw/main/Loader.lua"))()
+--join QQ group:1029830580
+end
+})
+
 local Tab = Window:MakeTab({
 	Name = "通用",
 	Icon = "rbxassetid://93566402708060",
