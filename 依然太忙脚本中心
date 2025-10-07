@@ -431,7 +431,7 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-  Name = "这个暂时没想好，不要点",
+  Name = "指南针崩服(必须要有指南针才能使用)(别人有的话可以在Dex给他复制到你那里)",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0SwordWarriors"))()
   end
