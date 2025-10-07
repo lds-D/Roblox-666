@@ -373,55 +373,24 @@ Tab:AddButton({
 })
 
 Tab:AddToggle({
-	Name = "这个暂时没想好，不要点",
+	Name = "悬服最终优化版(反重力)(适合自然灾害)",
 	Default = false,
-	Callback = function(Value)
-		if Value then
-		    Noclip = true
-		    Stepped = game.RunService.Stepped:Connect(function()
-			    if Noclip == true then
-				    for a, b in pairs(game.Workspace:GetChildren()) do
-                        if b.Name == game.Players.LocalPlayer.Name then
-                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-                                if v:IsA("BasePart") then
-                                    v.CanCollide = false
-                                end
-                            end
-                        end
-                    end
-			    else
-				    Stepped:Disconnect()
-			    end
-		    end)
-	    else
-		    Noclip = false
-	    end
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/全局物体漂浮最终优化版"))()
 	end
 })
 
 Tab:AddButton({
-	Name = "这个暂时没想好，不要点",
+	Name = "无敌少侠(r15)",
 	Callback = function()
-Player = game.Players.LocalPlayer
-	Pcf = Player.Character.HumanoidRootPart.CFrame
-	for i,v in pairs(game.Teams.Criminals:GetPlayers()) do
-	if v.Name ~= Player.Name then
-	local i = 10
-    repeat
-    wait()
-    i = i-1
-    game.Workspace.Remote.arrest:InvokeServer(v.Character.HumanoidRootPart)
-    Player.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
-    until i == 0
-end
-end
-end
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invinicible-Flight-R15-45414"))()
+    end
 })
 
 Tab:AddButton({
-	Name = "这个暂时没想好，不要点",
+	Name = "无敌少侠(r6)",
 	Callback = function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(847.7261352539062, 98.95999908447266, 2267.387451171875)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%97%A0%E6%95%8C%E5%B0%91%E4%BE%A0%E9%A3%9E%E8%A1%8Cr6.txt"))()
   	end
 })
 
