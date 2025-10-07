@@ -23,7 +23,7 @@ local about = Window:MakeTab({
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
 about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
 about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")
-about:AddParagraph("依然的师傅"," "..一个小小的脚本制作者.."")
+about:AddParagraph("依然的师傅", "一个小小的脚本制作者")
 
 local Tab = Window:MakeTab({
 	Name = "其他作者",
