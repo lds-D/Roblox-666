@@ -26,7 +26,7 @@ about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")
 about:AddParagraph("依然的师傅", "一个小小的脚本制作者")
 
 local Tab = Window:MakeTab({
-	Name = "其他作者",
+	Name = "其他通用脚本",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
@@ -54,9 +54,9 @@ loadstring(game:HttpGet(('https://github.com/DevSloPo/DVES/raw/main/XK%20Hub')))
 })
 
 Tab:AddButton({
-    Name = "XA Hub",	
+    Name = "Rb脚本",	
     Callback = function()
-loadstring(game:HttpGet("https://raw.gitcode.com/Xingtaiduan/Scripts/raw/main/Loader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/refs/heads/main/Rb-Hub"))()
 --join QQ group:1029830580
 end
 })
