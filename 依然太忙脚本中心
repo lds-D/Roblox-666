@@ -349,16 +349,16 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "变钢铁侠（有惊喜别人能看见）",
+	Name = "球壮环绕脚本",
 	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/7prijqYH"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Soul-Ring/main/%E5%8F%AC%E5%94%A4%E9%AD%82%E7%8E%AF"))()
   	end
 })
 
 Tab:AddButton({
-	Name = "手里剑（秒杀）",
+	Name = "防止摔落伤害",
 	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/mSLiAZHk"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777/Fall-injury/main/防止摔落伤害"))()
   	end
 })
 
