@@ -1,0 +1,122 @@
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local TweenService = game:GetService("TweenService")
+
+-- 创建主界面
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "CopyIDGui"
+screenGui.Parent = playerGui
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- 创建主框架
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+mainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = screenGui
+
+-- 添加圆角
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = mainFrame
+
+-- 添加标题
+local title = Instance.new("TextLabel")
+title.Name = "Title"
+title.Size = UDim2.new(0, 260, 0, 40)
+title.Position = UDim2.new(0.5, -130, 0, 20)
+title.AnchorPoint = Vector2.new(0.5, 0)
+title.BackgroundTransparency = 1
+title.Text = "复制Roblox ID"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 24
+title.Parent = mainFrame
+
+-- 添加ID显示
+local idLabel = Instance.new("TextLabel")
+idLabel.Name = "IDLabel"
+idLabel.Size = UDim2.new(0, 260, 0, 50)
+idLabel.Position = UDim2.new(0.5, -130, 0, 70)
+idLabel.AnchorPoint = Vector2.new(0.5, 0)
+idLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+idLabel.Text = "1056432449"
+idLabel.TextColor3 = Color3.fromRGB(0, 162, 255)
+idLabel.Font = Enum.Font.Gotham
+idLabel.TextSize = 22
+idLabel.Parent = mainFrame
+
+local idCorner = Instance.new("UICorner")
+idCorner.CornerRadius = UDim.new(0, 8)
+idCorner.Parent = idLabel
+
+-- 添加复制按钮
+local copyButton = Instance.new("TextButton")
+copyButton.Name = "CopyButton"
+copyButton.Size = UDim2.new(0, 260, 0, 50)
+copyButton.Position = UDim2.new(0.5, -130, 0, 130)
+copyButton.AnchorPoint = Vector2.new(0.5, 0)
+copyButton.BackgroundColor3 = Color3.fromRGB(0, 162, 255)
+copyButton.Text = "点击复制"
+copyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+copyButton.Font = Enum.Font.GothamBold
+copyButton.TextSize = 20
+copyButton.Parent = mainFrame
+
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0, 8)
+buttonCorner.Parent = copyButton
+
+-- 添加成功提示
+local successLabel = Instance.new("TextLabel")
+successLabel.Name = "SuccessLabel"
+successLabel.Size = UDim2.new(0, 260, 0, 40)
+successLabel.Position = UDim2.new(0.5, -130, 0, 190)
+successLabel.AnchorPoint = Vector2.new(0.5, 0)
+successLabel.BackgroundTransparency = 1
+successLabel.Text = "复制成功!"
+successLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+successLabel.Font = Enum.Font.Gotham
+successLabel.TextSize = 18
+successLabel.Visible = false
+successLabel.Parent = mainFrame
+
+-- 复制功能
+local function copyToClipboard()
+    local id = "1056432449"
+    pcall(function()
+        StarterGui:SetClipboard(id)
+    end)
+    
+    -- 显示成功提示
+    successLabel.Visible = true
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local fadeIn = TweenService:Create(successLabel, tweenInfo, {TextTransparency = 0})
+    fadeIn:Play()
+    
+    -- 按钮反馈动画
+    local shrink = TweenService:Create(copyButton, tweenInfo, {Size = UDim2.new(0, 250, 0, 45)})
+    local grow = TweenService:Create(copyButton, tweenInfo, {Size = UDim2.new(0, 260, 0, 50)})
+    
+    shrink:Play()
+    shrink.Completed:Connect(function()
+        grow:Play()
+    end)
+    
+    -- 3秒后隐藏成功提示
+    wait(3)
+    local fadeOut = TweenService:Create(successLabel, tweenInfo, {TextTransparency = 1})
+    fadeOut:Play()
+    fadeOut.Completed:Connect(function()
+        successLabel.Visible = false
+    end)
+end
+
+-- 连接点击事件
+copyButton.MouseButton1Click:Connect(copyToClipboard)
