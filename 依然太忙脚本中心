@@ -375,7 +375,7 @@ Tab:AddButton({
   	end
 })
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "悬服最终优化版(反重力)(适合自然灾害)",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/全局物体漂浮最终优化版"))()
