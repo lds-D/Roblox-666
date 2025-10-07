@@ -359,14 +359,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "控制物体最终优化版(适合自然灾害)",
+	Name = "控制物体最终优化版(单一)(适合自然灾害)",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/单一物体飞行载自己最终优化版"))()
   	end
 })
 
 Tab:AddButton({
-	Name = "控制物体另一个版本(适合自然灾害)",
+	Name = "控制物体另一个版本(单一)(适合自然灾害)",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%8D%95%E4%B8%80%E7%89%A9%E4%BD%93%E9%A3%9E%E8%A1%8C%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88", true))()
   	end
