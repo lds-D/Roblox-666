@@ -358,7 +358,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "防止摔落伤害",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777/Fall-injury/main/防止摔落伤害"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
   	end
 })
 
