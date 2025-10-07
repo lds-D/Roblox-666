@@ -352,9 +352,9 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "这个暂时没想好，不要点",
+	Name = "反重力(是我师傅做的)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/%E8%84%9A%E6%9C%AC"))()
   	end
 })
 
