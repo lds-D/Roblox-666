@@ -47,10 +47,17 @@ end
 })
 
 Tab:AddButton({
-	Name = "小魔",
+	Name = "XK脚本",
 	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaomoNB666/xiaomoNB666/main/666.txt"))()
+loadstring(game:HttpGet(('https://github.com/DevSloPo/DVES/raw/main/XK%20Hub')))()
   	end
+})
+
+    Name = "Rb脚本",	
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/refs/heads/main/Rb-Hub"))()
+--join QQ group:1029830580
+end
 })
 
 local Tab = Window:MakeTab({
