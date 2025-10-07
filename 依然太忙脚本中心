@@ -327,10 +327,6 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Section = Tab:AddSection({
-	Name = "脚本"
-})
-
 Tab:AddButton({
 	Name = "1",
 	Callback = function()
