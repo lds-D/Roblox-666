@@ -171,7 +171,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/
 })
 
 local Tab= Window:MakeTab({
-	Name = "👁玩家👁",
+	Name = "玩家",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
@@ -328,9 +328,9 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "1",
+	Name = "零件破坏者V2",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/De4aYHDY"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/-/main/零件破坏者v2"))()
   	end
 })
 
