@@ -23,9 +23,10 @@ local about = Window:MakeTab({
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
 about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
 about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")
-about:AddParagraph("依然的师傅", "一个小小的脚本制作者")
-about:AddParagraph("创作者", "Roblox_依然")
+about:AddParagraph("依然的师傅:一个小小的脚本制作者", "快手号:2066528711 QQ号:2939962496")
+about:AddParagraph("创作者:Roblox_依然", "快手号:YR_7891NB QQ号:3780699969")
 about:AddParagraph("QQ群聊", "1056432449")
+about:AddParagraph("XTTT", "你快回来😭😭😭")
 
 local Tab = Window:MakeTab({
 	Name = "其他通用脚本",
