@@ -1,7 +1,7 @@
 local CoreGui = game:GetService("StarterGui")
 
 CoreGui:SetCore("SendNotification", {
-    Title = "依然太忙脚本V1",
+    Title = "依然太忙脚本V2",
     Text = "依然太忙脚本中心加载（反挂机已开启）",
     Duration = 5, 
 })
@@ -32,9 +32,9 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "水下世界支持很多游戏_名单已被破除（不可用）",
+	Name = "皮脚本",
 	Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/Fish/main/sx')))()
+getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
     end
 })
 
