@@ -74,9 +74,10 @@ Tab:AddButton({
     Callback = function()
 loadstring(game:HttpGet("https://rawscripts.net/raw/FREE-ADMIN-FLY-GUI-30799"))()
     end
-}1
+})
+
 Tab:AddButton({
-	Name = "伪名说话",
+	Name = "为人说话",
 	Callback = function()
 loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
 	end 
