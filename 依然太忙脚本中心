@@ -20,7 +20,7 @@ local about = Window:MakeTab({
     PremiumOnly = false
 })
 
-about:AddParagraph("公告", "此脚本禁止倒卖如果你是买来我是不负责的,最后祝你使用愉快")
+about:AddParagraph("公告", "此脚本禁止倒卖如果你是买来我是不负责的,最后祝你使用愉快,有时候脚本会崩溃那是有可能我在更新")
 about:AddParagraph("更新", "优化了一下脚本")
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
 about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
