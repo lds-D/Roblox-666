@@ -67,6 +67,33 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/ref
 })
 
 local Tab = Window:MakeTab({
+	Name = "动作脚本",
+	Icon = "rbxassetid://93566402708060",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "动作(R15)(1)",
+    Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-14048"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "动作(R15)(2)",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FengYu-3/general/refs/heads/main/FE_R15.lua"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "动作(R15)(3)(推荐)",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
+  end
+})
+
+local Tab = Window:MakeTab({
 	Name = "通用",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
