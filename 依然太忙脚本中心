@@ -75,7 +75,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "依然NB飞行V9178",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E5%A4%AA%E5%BF%99%E8%84%9A%E6%9C%AC"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
     end
 })
 
