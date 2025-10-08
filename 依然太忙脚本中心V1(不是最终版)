@@ -89,7 +89,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FengYu-3/general/refs
 Tab:AddButton({
     Name = "动作(R15)(3)(推荐)",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Free-emote/refs/heads/main/Delta%20mad%20stuffs"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "前后空翻",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E5%89%8D%E5%90%8E%E7%A9%BA%E7%BF%BB.txt"))()
   end
 })
 
