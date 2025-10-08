@@ -73,9 +73,9 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-    Name = "飞行",
+    Name = "依然NB飞行V9178",
     Callback = function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/FREE-ADMIN-FLY-GUI-30799"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E5%A4%AA%E5%BF%99%E8%84%9A%E6%9C%AC"))()
     end
 })
 
