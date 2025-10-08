@@ -221,7 +221,7 @@ Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E5%A4%AA%E5%BF%99%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%BF%83V1(%E4%B8%8D%E6%98%AF%E6%9C%80%E7%BB%88%E7%89%88)"))()
+	
   end
 })
 
@@ -374,28 +374,28 @@ Tab:AddButton({
 	Name = "无敌少侠(r6)",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%97%A0%E6%95%8C%E5%B0%91%E4%BE%A0%E9%A3%9E%E8%A1%8Cr6.txt"))()
-  	end
+  end
 })
 
 Tab:AddButton({
 	Name = "这个暂时没想好，不要点",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
-  	end
+  end
 })
 
 Tab:AddButton({
 	Name = "这个暂时没想好，不要点",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
-  	end
+  end
 })
 
 Tab:AddButton({
 	Name = "这个暂时没想好，不要点",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
-  	end
+  end
 })
 
 local Tab = Window:MakeTab({
@@ -405,15 +405,15 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-  Name = "防止摔落伤害",
-  Callback = function()
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
+    Name = "防止摔落伤害",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
   end
 })
 
 Tab:AddButton({
-  Name = "指南针崩服(必须要有指南针才能使用)(别人有的话可以在Dex给他复制到你那里)",
-  Callback = function()
+    Name = "指南针崩服(必须要有指南针才能使用)(别人有的话可以在Dex给他复制到你那里)",
+    Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0SwordWarriors"))()
   end
 })
@@ -421,8 +421,8 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "这个暂时没想好，不要点",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/KidichiHB/Kidachi/main/Scripts/SwordWarrior", true))()    
-    end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KidichiHB/Kidachi/main/Scripts/SwordWarrior", true))()    
+  end
 })
 
 Tab:AddButton({
@@ -433,9 +433,9 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-  Name = "这个暂时没想好，不要点",
-  Callback = function()
-   loadstring(game:HttpGet("https://scriptblox.com/raw/Toilet!Event!Sword-Warriors!-NEW-OP-SCRIPT-7866"))()
+    Name = "这个暂时没想好，不要点",
+    Callback = function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Toilet!Event!Sword-Warriors!-NEW-OP-SCRIPT-7866"))()
   end
 })
 
@@ -466,14 +466,14 @@ Tab:AddDropdown({
 	Callback = function(Value)
 local ohString1 = (Value)
 game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(ohString1)
-	end 
+  end 
 })
 
 Tab:AddButton({
 	Name = "自动杀鲨鱼🦈(鲨鱼)",
 	Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
-  	end    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
+  end    
 })
 
 Tab:AddButton({	Name = "自动杀鲨鱼（鲨2）",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()  
@@ -489,6 +489,6 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "死铁轨脚本(中文)",
 	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
-    end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
+  end
 })
