@@ -82,14 +82,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs
 Tab:AddButton({
 	Name = "无限跳",
 	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
   end 
 })
 
 Tab:AddButton({
    Name = "踏空行走",
    Callback = function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
   end
 })
 
@@ -97,28 +97,28 @@ Tab:AddButton({
     Name = "光影_2",
     Default = false,
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
   end
 })
 
 Tab:AddButton({
 	Name = "超高画质",
 	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
   end
 })    
 
 Tab:AddButton({
     Name = "旋转",
     Callback = function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
 Tab:AddButton({
 	Name = "转起来",
 	Callback = function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
@@ -144,21 +144,21 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "爬墙",
 	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
   end
 })
 
 Tab:AddButton({
     Name = "动作",
     Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
   end
 })
 
 Tab:AddButton({
 	Name = "电脑键盘",
 	Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   end    
 })
 
@@ -178,7 +178,7 @@ local Tab= Window:MakeTab({
 Tab:AddButton({
    Name = "奖励自己",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
   end
 })
 
@@ -186,7 +186,7 @@ Tab:AddButton({
 	Name = "无限跳",
     Default = false,
 	Callback = function(Value)
-    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
   end
 })
 
@@ -221,7 +221,7 @@ Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
-	
+        local Workspace = game:GetService("Workspace")local Players = game:GetService("Players")local Clipon = trueStepped = game:GetService("RunService").Stepped:Connect(function()	if not Clipon == false then		for a, b in pairs(Workspace:GetChildren()) do        if b.Name == Players.LocalPlayer.Name then        for i, v in pairs(Workspace[Players.LocalPlayer.Name]:GetChildren()) do        if v:IsA("BasePart") then        v.CanCollide = false        end end end end	else		Stepped:Disconnect()	endend)
   end
 })
 
@@ -283,21 +283,21 @@ end)
 Tab:AddButton({
 	Name = "传送玩家",
 	Callback = function()
-      	loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
+loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
   	end
 })
 
 Tab:AddButton({
 	Name = "fps显示",
 	Callback = function()
-      	loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
-  	end
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
+  end
 })
 
 Tab:AddButton({
 	Name = "玩家进入提示",
 	Callback = function()
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
   	end
 })
 
@@ -311,69 +311,69 @@ Tab:AddButton({
 	Name = "零件破坏者V2(适合自然灾害)",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/-/main/零件破坏者v2"))()
-  	end
+  end
 })
 
 Tab:AddButton({
 	Name = "悬浮(反重力)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%85%A8%E5%B1%80%E7%89%A9%E4%BD%93%E6%BC%82%E6%B5%AE%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88"))()
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%85%A8%E5%B1%80%E7%89%A9%E4%BD%93%E6%BC%82%E6%B5%AE%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "控制物体(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%8D%95%E4%B8%80%E7%89%A9%E4%BD%93%E9%A3%9E%E8%A1%8C%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88"))()   
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%8D%95%E4%B8%80%E7%89%A9%E4%BD%93%E9%A3%9E%E8%A1%8C%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88"))()   
+  end
 })
 
 Tab:AddButton({
 	Name = "球壮环绕脚本(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Soul-Ring/main/%E5%8F%AC%E5%94%A4%E9%AD%82%E7%8E%AF"))()
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Soul-Ring/main/%E5%8F%AC%E5%94%A4%E9%AD%82%E7%8E%AF"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "反重力(是我师傅做的)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/%E8%84%9A%E6%9C%AC"))()
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/%E8%84%9A%E6%9C%AC"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "控制物体最终优化版(单一)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/单一物体飞行载自己最终优化版"))()
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/单一物体飞行载自己最终优化版"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "控制物体另一个版本(单一)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%8D%95%E4%B8%80%E7%89%A9%E4%BD%93%E9%A3%9E%E8%A1%8C%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88", true))()
-  	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/%E5%8D%95%E4%B8%80%E7%89%A9%E4%BD%93%E9%A3%9E%E8%A1%8C%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%9C%80%E7%BB%88%E4%BC%98%E5%8C%96%E7%89%88", true))()
+  end
 })
 
 Tab:AddButton({
 	Name = "悬服最终优化版(反重力)(适合自然灾害)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/全局物体漂浮最终优化版"))()
-	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main/全局物体漂浮最终优化版"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "无敌少侠(r15)",
 	Callback = function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invinicible-Flight-R15-45414"))()
-    end
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invinicible-Flight-R15-45414"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "无敌少侠(r6)",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%97%A0%E6%95%8C%E5%B0%91%E4%BE%A0%E9%A3%9E%E8%A1%8Cr6.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%97%A0%E6%95%8C%E5%B0%91%E4%BE%A0%E9%A3%9E%E8%A1%8Cr6.txt"))()
   end
 })
 
@@ -407,14 +407,14 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "防止摔落伤害",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Fall-injury/main/防止摔落伤害"))()
   end
 })
 
 Tab:AddButton({
     Name = "指南针崩服(必须要有指南针才能使用)(别人有的话可以在Dex给他复制到你那里)",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0SwordWarriors"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0SwordWarriors"))()
   end
 })
 
@@ -426,36 +426,36 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-  Name = "这个暂时没想好，不要点",
-  Callback = function()
-   loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Sword-Warriors-Simulator-OP-EASY-UGC-SOON-AUTOFARM-8004"))()
+    Name = "这个暂时没想好，不要点",
+    Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Sword-Warriors-Simulator-OP-EASY-UGC-SOON-AUTOFARM-8004"))()
   end
 })
 
 Tab:AddButton({
     Name = "这个暂时没想好，不要点",
     Callback = function()
-    loadstring(game:HttpGet("https://scriptblox.com/raw/Toilet!Event!Sword-Warriors!-NEW-OP-SCRIPT-7866"))()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Toilet!Event!Sword-Warriors!-NEW-OP-SCRIPT-7866"))()
   end
 })
 
 Tab:AddButton({
-  Name = "这个暂时没想好，不要点",
-  Callback = function()
-   loadstring(game:HttpGet("https://scriptblox.com/raw/ToiletTower!Sword-Warriors!-Instant-Sword-Swing-7653"))()
+    Name = "这个暂时没想好，不要点",
+    Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/ToiletTower!Sword-Warriors!-Instant-Sword-Swing-7653"))()
   end
 })
 
 local Tab = Window:MakeTab({
-	Name = "鲨口求生(bushi",
+	Name = "在森林中存活99夜",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
 
 Tab:AddButton({
-  Name = "脚本",
-  Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/YYVLbzVg", true))()
+    Name = "99夜DARK中心Kenny汉化",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/DARK.lua"))()
   end
 })
 
@@ -472,12 +472,12 @@ game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:F
 Tab:AddButton({
 	Name = "自动杀鲨鱼🦈(鲨鱼)",
 	Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
   end    
 })
 
 Tab:AddButton({	Name = "自动杀鲨鱼（鲨2）",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()  
-end
+  end
 })
 
 local Tab = Window:MakeTab({
