@@ -93,206 +93,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/
   end
 })
 
-Tab:AddButton({
-    Name = "光影_2",
-    Default = false,
-    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "超高画质",
-	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
-  end
-})    
-
-Tab:AddButton({
-    Name = "旋转",
-    Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-  end
-})
-
-Tab:AddButton({
-	Name = "转起来",
-	Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-  end
-})
-
-Tab:AddToggle({
-	Name = "夜视",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-		    game.Lighting.Ambient = Color3.new(1, 1, 1)
-		else
-		    game.Lighting.Ambient = Color3.new(0, 0, 0)
-		end
-	end
-})
-
-Tab:AddButton({
-	Name = "飞车",
-	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "爬墙",
-	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
-  end
-})
-
-Tab:AddButton({
-    Name = "动作",
-    Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "电脑键盘",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-  end    
-})
-
-Tab:AddButton({
-	Name = "踏空行走",
-	Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
-  end
-})
-
-local Tab= Window:MakeTab({
-	Name = "玩家",
-	Icon = "rbxassetid://93566402708060",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-   Name = "奖励自己",
-   Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
-  end
-})
-
-Tab:AddButton({
-	Name = "无限跳",
-    Default = false,
-	Callback = function(Value)
-loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
-  end
-})
-
-Tab:AddTextbox({
-	Name = "跳跃高度设置",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-  end
-})
-
-Tab:AddTextbox({
-	Name = "移动速度设置",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-  end
-})
-
-Tab:AddTextbox({
-	Name = "重力设置",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Workspace.Gravity = Value
-  end
-})
-
-Tab:AddButton({
-	Name = "透视",
-	Callback = function()
-      	local FillColor = Color3.fromRGB(175,25,255)
-local DepthMode = "AlwaysOnTop"
-local FillTransparency = 0.5
-local OutlineColor = Color3.fromRGB(255,255,255)
-local OutlineTransparency = 0
-
-local CoreGui = game:FindService("CoreGui")
-local Players = game:FindService("Players")
-local lp = Players.LocalPlayer
-local connections = {}
-
-local Storage = Instance.new("Folder")
-Storage.Parent = CoreGui
-Storage.Name = "Highlight_Storage"
-
-local function Highlight(plr)
-    local Highlight = Instance.new("Highlight")
-    Highlight.Name = plr.Name
-    Highlight.FillColor = FillColor
-    Highlight.DepthMode = DepthMode
-    Highlight.FillTransparency = FillTransparency
-    Highlight.OutlineColor = OutlineColor
-    Highlight.OutlineTransparency = 0
-    Highlight.Parent = Storage
-    
-    local plrchar = plr.Character
-    if plrchar then
-        Highlight.Adornee = plrchar
-    end
-
-    connections[plr] = plr.CharacterAdded:Connect(function(char)
-        Highlight.Adornee = char
-    end)
-end
-
-Players.PlayerAdded:Connect(Highlight)
-for i,v in next, Players:GetPlayers() do
-    Highlight(v)
-end
-
-Players.PlayerRemoving:Connect(function(plr)
-    local plrname = plr.Name
-    if Storage[plrname] then
-        Storage[plrname]:Destroy()
-    end
-    if connections[plr] then
-        connections[plr]:Disconnect()
-    end
-end)
-  	end
-})
-
-Tab:AddButton({
-	Name = "传送玩家",
-	Callback = function()
-loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
-  	end
-})
-
-Tab:AddButton({
-	Name = "fps显示",
-	Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
-  end
-})
-
-Tab:AddButton({
-	Name = "玩家进入提示",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
-  	end
-})
-
 local Tab = Window:MakeTab({
 	Name = "娱乐脚本",
 	Icon = "rbxassetid://93566402708060",
@@ -461,5 +261,18 @@ Tab:AddButton({
 	Name = "死铁轨脚本(中文)",
 	Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
+  end
+})
+
+local Tab = Window:MakeTab({
+	Name = "偷走脑红",
+	Icon = "rbxassetid://93566402708060",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "偷走脑红脚本1",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DoliScriptz/MakalHub/refs/heads/main/loader.lua"))()
   end
 })
