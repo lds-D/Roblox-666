@@ -87,30 +87,30 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-  Name = "踏空行走",
-  Callback = function()
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+   Name = "踏空行走",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
   end
 })
 
 Tab:AddButton({
-  Name = "光影_2",
-  Default = false,
-  Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+   Name = "光影_2",
+   Default = false,
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
   end
 })
 
 Tab:AddButton({
 	Name = "超高画质",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
 end
 })    
 
 Tab:AddButton({
-  Name = "旋转",
-  Callback = function()
+    Name = "旋转",
+    Callback = function()
     loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
@@ -118,7 +118,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "转起来",
 	Callback = function()
-      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   	end
 })
 
