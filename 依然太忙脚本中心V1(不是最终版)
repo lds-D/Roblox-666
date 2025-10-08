@@ -39,8 +39,8 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "皮脚本",
 	Callback = function()
-getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
-    end
+    getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+  end
 })
 
 Tab:AddButton({
@@ -48,14 +48,14 @@ Tab:AddButton({
     Callback = function()
 loadstring(game:HttpGet("https://raw.gitcode.com/Xingtaiduan/Scripts/raw/main/Loader.lua"))()
 --join QQ group:1029830580
-end
+  end
 })
 
 Tab:AddButton({
 	Name = "XK脚本",
 	Callback = function()
 loadstring(game:HttpGet(('https://github.com/DevSloPo/DVES/raw/main/XK%20Hub')))()
-  	end
+  end
 })
 
 Tab:AddButton({
@@ -63,7 +63,7 @@ Tab:AddButton({
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/refs/heads/main/Rb-Hub"))()
 --join QQ group:1029830580
-end
+  end
 })
 
 local Tab = Window:MakeTab({
@@ -76,50 +76,50 @@ Tab:AddButton({
     Name = "依然NB飞行V9178",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
-    end
+  end
 })
 
 Tab:AddButton({
 	Name = "无限跳",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
-	end 
+    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+  end 
 })
 
 Tab:AddButton({
    Name = "踏空行走",
    Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
   end
 })
 
 Tab:AddButton({
-   Name = "光影_2",
-   Default = false,
-   Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+    Name = "光影_2",
+    Default = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
   end
 })
 
 Tab:AddButton({
 	Name = "超高画质",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
-end
+    loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+  end
 })    
 
 Tab:AddButton({
     Name = "旋转",
     Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
 Tab:AddButton({
 	Name = "转起来",
 	Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-  	end
+    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+  end
 })
 
 Tab:AddToggle({
@@ -137,36 +137,36 @@ Tab:AddToggle({
 Tab:AddButton({
 	Name = "飞车",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
-	end
+    loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "爬墙",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
-end
+    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+  end
 })
 
 Tab:AddButton({
     Name = "动作",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
-    end
+    loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+  end
 })
 
 Tab:AddButton({
 	Name = "电脑键盘",
 	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-  	end    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  end    
 })
 
 Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
-	end
+  end
 })
 
 local Tab= Window:MakeTab({
@@ -176,9 +176,9 @@ local Tab= Window:MakeTab({
 })
 
 Tab:AddButton({
-  Name = "奖励自己",
-  Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
+   Name = "奖励自己",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
   end
 })
 
@@ -186,8 +186,8 @@ Tab:AddButton({
 	Name = "无限跳",
     Default = false,
 	Callback = function(Value)
-loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
-	end
+    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+  end
 })
 
 Tab:AddTextbox({
@@ -196,7 +196,7 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-	end
+  end
 })
 
 Tab:AddTextbox({
@@ -205,7 +205,7 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end
+  end
 })
 
 Tab:AddTextbox({
@@ -214,34 +214,15 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 		game.Workspace.Gravity = Value
-	end
+  end
 })
 
 Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
-		if Value then
-		    Noclip = true
-		    Stepped = game.RunService.Stepped:Connect(function()
-			    if Noclip == true then
-				    for a, b in pairs(game.Workspace:GetChildren()) do
-                        if b.Name == game.Players.LocalPlayer.Name then
-                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-                                if v:IsA("BasePart") then
-                                    v.CanCollide = false
-                                end
-                            end
-                        end
-                    end
-			    else
-				    Stepped:Disconnect()
-			    end
-		    end)
-	    else
-		    Noclip = false
-	    end
-	end
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E5%A4%AA%E5%BF%99%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%BF%83V1(%E4%B8%8D%E6%98%AF%E6%9C%80%E7%BB%88%E7%89%88)"))()
+  end
 })
 
 Tab:AddButton({
