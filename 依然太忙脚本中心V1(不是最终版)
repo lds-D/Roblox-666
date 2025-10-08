@@ -127,6 +127,20 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/
   end
 })
 
+Tab:AddButton({
+    Name = "创建私人服务器",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/342423114514/342423/refs/heads/main/9191"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "一键创建私人服务器",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yoursvexyyy/VEX-OP/refs/heads/main/free%20server%20finder"))()
+  end
+})
+
 local Tab = Window:MakeTab({
 	Name = "娱乐脚本",
 	Icon = "rbxassetid://93566402708060",
@@ -367,5 +381,12 @@ Tab:AddButton({
     Name = "偷走脑红脚本1",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DoliScriptz/MakalHub/refs/heads/main/loader.lua"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "偷走脑红脚本2",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/342423114514/-/refs/heads/main/%E6%9C%9D%E9%9C%9E%E6%B1%89%E8%84%91%E7%BA%A2%E8%84%9A%E6%9C%AC.txt"))()
   end
 })
