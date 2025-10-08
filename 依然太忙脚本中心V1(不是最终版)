@@ -221,7 +221,7 @@ Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
-        local Workspace = game:GetService("Workspace")local Players = game:GetService("Players")local Clipon = trueStepped = game:GetService("RunService").Stepped:Connect(function()	if not Clipon == false then		for a, b in pairs(Workspace:GetChildren()) do        if b.Name == Players.LocalPlayer.Name then        for i, v in pairs(Workspace[Players.LocalPlayer.Name]:GetChildren()) do        if v:IsA("BasePart") then        v.CanCollide = false        end end end end	else		Stepped:Disconnect()	endend)
+
   end
 })
 
