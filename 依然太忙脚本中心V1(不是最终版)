@@ -217,14 +217,6 @@ Tab:AddTextbox({
   end
 })
 
-Tab:AddToggle({
-	Name = "穿墙",
-	Default = false,
-	Callback = function(Value)
-
-  end
-})
-
 Tab:AddButton({
 	Name = "透视",
 	Callback = function()
@@ -456,27 +448,6 @@ Tab:AddButton({
     Name = "99夜DARK中心Kenny汉化",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/DARK.lua"))()
-  end
-})
-
-Tab:AddDropdown({
-	Name = "选择你的免费船(鲨鱼)",
-	Default = "1",
-	Options = {"无", "DuckyBoatBeta", "DuckyBoat", "BlueCanopyMotorboat", "BlueWoodenMotorboat", "UnicornBoat", "Jetski", "RedMarlin", "Sloop", "TugBoat", "SmallDinghyMotorboat", "JetskiDonut", "Marlin", "TubeBoat", "FishingBoat", "VikingShip", "SmallWoodenSailboat", "RedCanopyMotorboat", "Catamaran", "CombatBoat", "TourBoat", "Duckmarine", "PartyBoat", "MilitarySubmarine", "GingerbreadSteamBoat", "Sleigh2022", "Snowmobile", "CruiseShip"},
-	Callback = function(Value)
-local ohString1 = (Value)
-game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(ohString1)
-  end 
-})
-
-Tab:AddButton({
-	Name = "自动杀鲨鱼🦈(鲨鱼)",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
-  end    
-})
-
-Tab:AddButton({	Name = "自动杀鲨鱼（鲨2）",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()  
   end
 })
 
