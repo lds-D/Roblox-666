@@ -80,14 +80,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs
 })
 
 Tab:AddButton({
-	Name = "伪名说话",
+	Name = "无限跳",
 	Callback = function()
-loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
 	end 
 })
 
 Tab:AddButton({
-  Name = "HUA 光影",
+  Name = "踏空行走",
   Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/arzRCgwS"))()
   end
