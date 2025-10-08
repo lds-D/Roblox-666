@@ -75,21 +75,21 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "依然NB飞行V9178",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-666/refs/heads/main/%E4%BE%9D%E7%84%B6%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC"))()
     end
 })
 
 Tab:AddButton({
 	Name = "无限跳",
 	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
 	end 
 })
 
 Tab:AddButton({
    Name = "踏空行走",
    Callback = function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
   end
 })
 
@@ -97,28 +97,28 @@ Tab:AddButton({
    Name = "光影_2",
    Default = false,
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
   end
 })
 
 Tab:AddButton({
 	Name = "超高画质",
 	Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
 end
 })    
 
 Tab:AddButton({
     Name = "旋转",
     Callback = function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   end
 })
 
 Tab:AddButton({
 	Name = "转起来",
 	Callback = function()
-	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
   	end
 })
 
@@ -151,14 +151,14 @@ end
 Tab:AddButton({
     Name = "动作",
     Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
     end
 })
 
 Tab:AddButton({
 	Name = "电脑键盘",
 	Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
 
@@ -178,7 +178,7 @@ local Tab= Window:MakeTab({
 Tab:AddButton({
   Name = "奖励自己",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
   end
 })
 
