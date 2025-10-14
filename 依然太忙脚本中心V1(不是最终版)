@@ -394,7 +394,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/342423114514/-/refs/h
 })
 
 local Tab = Window:MakeTab({
-	Name = "门",
+	Name = "DOORS",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
 })
@@ -403,5 +403,19 @@ Tab:AddButton({
     Name = "门1(Kenny汉化)",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/VelocityX.lua"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "门2(Kenny汉化)",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/DOORS.lua"))()
+  end
+})
+
+Tab:AddButton({
+    Name = "门3",
+    Callback = function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))() 
   end
 })
