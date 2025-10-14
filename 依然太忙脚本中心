@@ -139,6 +139,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/yoursvexyyy/VEX-OP/re
   end
 })
 
+Tab:AddButton({
+    Name = "控制NPC",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/fe-source/refs/heads/main/NPC/source/main.Luau"))()
+--sub @Im_patrick right now!
+  end
+})
+
 local Tab = Window:MakeTab({
 	Name = "娱乐脚本",
 	Icon = "rbxassetid://93566402708060",
