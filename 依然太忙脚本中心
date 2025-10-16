@@ -72,6 +72,26 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/ref
 })
 
 local Tab = Window:MakeTab({
+	Name = "自瞄",
+	Icon = "rbxassetid://93566402708060",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "阿尔宙斯自瞄",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))()
+   end
+})
+
+Tab:AddButton({
+    Name = "神青高级自瞄",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gycgchgyfytdttr/QQ-9-2-8-9-50173/refs/heads/main/cure.lua"))()
+   end
+})
+
+local Tab = Window:MakeTab({
 	Name = "动作脚本",
 	Icon = "rbxassetid://93566402708060",
 	PremiumOnly = false
