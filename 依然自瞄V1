@@ -1,149 +1,294 @@
+--[[
+    Open Aimbot
+    Universal Open Source Aimbot
+    Release 1.8.11
+
+    twix.cyou/pix
+    twix.cyou/OpenAimbotV3rm
+
+    Author: ttwiz_z (ttwizz)
+    License: MIT
+    GitHub: https://github.com/ttwizz/Open-Aimbot
+
+    Issues: https://github.com/ttwizz/Open-Aimbot/issues
+    Pull requests: https://github.com/ttwizz/Open-Aimbot/pulls
+    Discussions: https://github.com/ttwizz/Open-Aimbot/discussions
+
+    Wiki: https://moderka.org/Open-Aimbot
+]]
+
+
+--! Debugger
+
+local DEBUG = false
+
+if DEBUG then
+    getfenv().getfenv = function()
+        return setmetatable({}, {
+            __index = function()
+                return function() return true end
+            end
+        })
+    end
+end
+
+
+--! Services
+
+local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
-local UIS = game:GetService("UserInputService")
+local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
-local GuiService = game:GetService("GuiService")
+local TweenService = game:GetService("TweenService")
 
-local LOCK_KEY = Enum.KeyCode.RightShift
-local TARGET_PART = "Head"
-local ACTIVATE_RADIUS = 100
-local GAMEPAD_TRIGGER = Enum.KeyCode.ButtonL2
-local TRIGGER_THRESHOLD = 0.3
 
-local DYNAMIC_SMOOTHING = {
-    Enabled = true,
-    MinDistance = 10,
-    MaxDistance = 50,
-    CloseSmooth = 0.15,
-    FarSmooth = 0.4,
-    CurveFactor = 2.5
-}
+--! Colors Handler
 
-local localPlayer = Players.LocalPlayer
-local camera = workspace.CurrentCamera
-local target = nil
-local currentSmoothness = DYNAMIC_SMOOTHING.CloseSmooth
-
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "AimAssistUI"
-screenGui.Parent = localPlayer:WaitForChild("PlayerGui")
-
-local tutorialFrame = Instance.new("Frame")
-tutorialFrame.Size = UDim2.new(0.35, 0, 0.25, 0)
-tutorialFrame.Position = UDim2.new(0.65, 0, 0.7, 0)
-tutorialFrame.BackgroundTransparency = 0.8
-tutorialFrame.Visible = false
-
-local hintTexts = {
-    Mobile = "📱 长按右侧区域锁定目标",
-    Gamepad = "🎮 按住左扳机(LT)锁定+压力感应",
-    Desktop = "🖱️ 按住右键拖动瞄准"
-}
-
-local deviceHint = Instance.new("TextLabel")
-deviceHint.Text = "设备检测中..."
-deviceHint.TextColor3 = Color3.new(1,1,1)
-deviceHint.Size = UDim2.new(1, 0, 1, 0)
-deviceHint.Font = Enum.Font.GothamMedium
-deviceHint.Parent = tutorialFrame
-screenGui.Parent = tutorialFrame
-
-local function getDeviceType()
-    if UIS.TouchEnabled then return "Mobile" end
-    if UIS:GetLastInputType().Name:find("Gamepad") then return "Gamepad" end
-    return "Desktop"
+local function PackColour(Colour)
+    return typeof(Colour) == "Color3" and { R = Colour.R * 255, G = Colour.G * 255, B = Colour.B * 255 } or typeof(Colour) == "table" and Colour or { R = 255, G = 255, B = 255 }
 end
 
-local function getValidTargets()
-    local targets = {}
-    return targets
+local function UnpackColour(Colour)
+    return typeof(Colour) == "table" and Color3.fromRGB(Colour.R, Colour.G, Colour.B) or typeof(Colour) == "Color3" and Colour or Color3.fromRGB(255, 255, 255)
 end
 
-local function findBestTarget()
-    local closest = nil
-    local minDistance = math.huge
-    for _, targetData in ipairs(getValidTargets()) do
-        local distance = (targetData.ScreenPos - camera.ViewportSize/2).Magnitude
-        if distance < minDistance then
-            closest = targetData
-            minDistance = distance
-        end
-    end
-    return closest
-end
 
-local activeTouchId = nil
-local touchFrame = Instance.new("Frame")
-touchFrame.Size = UDim2.new(0.3, 0, 0.6, 0)
-touchFrame.BackgroundTransparency = 1
-touchFrame.Parent = screenGui
+--! Configuration Importer
 
-UIS.TouchStarted:Connect(function(touch)
-    if getDeviceType() ~= "Mobile" then return end
-    local center = touchFrame.AbsolutePosition + touchFrame.AbsoluteSize/2
-    if (touch.Position - center).Magnitude < ACTIVATE_RADIUS then
-        activeTouchId = touch.UserInputType
-        target = findBestTarget()
-    end
-end)
+local ImportedConfiguration = {}
 
-UIS.TouchEnded:Connect(function(touch)
-    if touch.UserInputType == activeTouchId then
-        target = nil
-        activeTouchId = nil
-    end
-end)
-
-UIS.InputChanged:Connect(function(input)
-    if getDeviceType() ~= "Gamepad" then return end
-    if input.UserInputType == Enum.UserInputType.Gamepad1 then
-        if input.KeyCode == GAMEPAD_TRIGGER then
-            local triggerValue = input.Position.Z
-            if triggerValue > TRIGGER_THRESHOLD then
-                target = target or findBestTarget()
-                currentSmoothness = DYNAMIC_SMOOTHING.CloseSmooth * 
-                    (1 - (triggerValue - TRIGGER_THRESHOLD)/(1 - TRIGGER_THRESHOLD)*0.5)
-            else
-                target = nil
+pcall(function()
+    if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().isfile(string.format("%s.ttwizz", game.GameId)) and getfenv().readfile(string.format("%s.ttwizz", game.GameId)) then
+        ImportedConfiguration = HttpService:JSONDecode(getfenv().readfile(string.format("%s.ttwizz", game.GameId)))
+        for Key, Value in next, ImportedConfiguration do
+            if Key == "FoVColour" or Key == "ESPColour" then
+                ImportedConfiguration[Key] = UnpackColour(Value)
             end
         end
     end
 end)
 
-UIS.InputBegan:Connect(function(input)
-    if getDeviceType() == "Desktop" then
-        if input.UserInputType == Enum.UserInputType.MouseButton2 then
-            target = findBestTarget()
+
+--! Configuration Initializer
+
+local Configuration = {}
+
+--? Aimbot
+
+Configuration.Aimbot = ImportedConfiguration["Aimbot"] or false
+Configuration.OnePressAimingMode = ImportedConfiguration["OnePressAimingMode"] or false
+Configuration.AimMode = ImportedConfiguration["AimMode"] or "Camera"
+Configuration.SilentAimMethod = ImportedConfiguration["SilentAimMethod"] or "Mouse.Hit / Mouse.Target"
+Configuration.SilentAimChance = ImportedConfiguration["SilentAimChance"] or 100
+Configuration.OffAfterKill = ImportedConfiguration["OffAfterKill"] or false
+Configuration.AimKey = ImportedConfiguration["AimKey"] or "RMB"
+Configuration.AimPartDropdownValues = ImportedConfiguration["AimPartDropdownValues"] or { "Head", "HumanoidRootPart" }
+Configuration.AimPart = ImportedConfiguration["AimPart"] or "HumanoidRootPart"
+Configuration.RandomAimPart = ImportedConfiguration["RandomAimPart"] or false
+
+Configuration.UseOffset = ImportedConfiguration["UseOffset"] or false
+Configuration.OffsetType = ImportedConfiguration["OffsetType"] or "Static"
+Configuration.StaticOffsetIncrement = ImportedConfiguration["StaticOffsetIncrement"] or 10
+Configuration.DynamicOffsetIncrement = ImportedConfiguration["DynamicOffsetIncrement"] or 10
+Configuration.AutoOffset = ImportedConfiguration["AutoOffset"] or false
+Configuration.MaxAutoOffset = ImportedConfiguration["MaxAutoOffset"] or 50
+
+Configuration.UseSensitivity = ImportedConfiguration["UseSensitivity"] or false
+Configuration.Sensitivity = ImportedConfiguration["Sensitivity"] or 100
+Configuration.UseNoise = ImportedConfiguration["UseNoise"] or false
+
+--? TriggerBot
+
+Configuration.TriggerBot = ImportedConfiguration["TriggerBot"] or false
+Configuration.OnePressTriggeringMode = ImportedConfiguration["OnePressTriggeringMode"] or false
+Configuration.SmartTriggerBot = ImportedConfiguration["SmartTriggerBot"] or false
+Configuration.TriggerKey = ImportedConfiguration["TriggerKey"] or "V"
+
+--? Checks
+
+Configuration.TeamCheck = ImportedConfiguration["TeamCheck"] or false
+Configuration.FriendCheck = ImportedConfiguration["FriendCheck"] or false
+Configuration.WallCheck = ImportedConfiguration["WallCheck"] or false
+Configuration.WaterCheck = ImportedConfiguration["WaterCheck"] or false
+
+Configuration.FoVCheck = ImportedConfiguration["FoVCheck"] or false
+Configuration.FoVRadius = ImportedConfiguration["FoVRadius"] or 100
+Configuration.MagnitudeCheck = ImportedConfiguration["MagnitudeCheck"] or false
+Configuration.TriggerMagnitude = ImportedConfiguration["TriggerMagnitude"] or 500
+Configuration.TransparencyCheck = ImportedConfiguration["TransparencyCheck"] or false
+Configuration.IgnoredTransparency = ImportedConfiguration["IgnoredTransparency"] or 0.5
+Configuration.WhitelistedGroupCheck = ImportedConfiguration["WhitelistedGroupCheck"] or false
+Configuration.WhitelistedGroup = ImportedConfiguration["WhitelistedGroup"] or 0
+Configuration.BlacklistedGroupCheck = ImportedConfiguration["BlacklistedGroupCheck"] or false
+Configuration.BlacklistedGroup = ImportedConfiguration["BlacklistedGroup"] or 0
+
+Configuration.IgnoredPlayersCheck = ImportedConfiguration["IgnoredPlayersCheck"] or false
+Configuration.IgnoredPlayersDropdownValues = ImportedConfiguration["IgnoredPlayersDropdownValues"] or {}
+Configuration.IgnoredPlayers = ImportedConfiguration["IgnoredPlayers"] or {}
+Configuration.TargetPlayersCheck = ImportedConfiguration["TargetPlayersCheck"] or false
+Configuration.TargetPlayersDropdownValues = ImportedConfiguration["TargetPlayersDropdownValues"] or {}
+Configuration.TargetPlayers = ImportedConfiguration["TargetPlayers"] or {}
+
+--? Visuals
+
+Configuration.ShowFoV = ImportedConfiguration["ShowFoV"] or false
+Configuration.FoVThickness = ImportedConfiguration["FoVThickness"] or 2
+Configuration.FoVTransparency = ImportedConfiguration["FoVTransparency"] or 0.8
+Configuration.FoVColour = ImportedConfiguration["FoVColour"] or Color3.fromRGB(255, 255, 255)
+
+Configuration.SmartESP = ImportedConfiguration["SmartESP"] or false
+Configuration.ESPBox = ImportedConfiguration["ESPBox"] or false
+Configuration.NameESP = ImportedConfiguration["NameESP"] or false
+Configuration.NameESPSize = ImportedConfiguration["NameESPSize"] or 16
+Configuration.TracerESP = ImportedConfiguration["TracerESP"] or false
+Configuration.ESPThickness = ImportedConfiguration["ESPThickness"] or 2
+Configuration.ESPTransparency = ImportedConfiguration["ESPTransparency"] or 0.8
+Configuration.ESPColour = ImportedConfiguration["ESPColour"] or Color3.fromRGB(255, 255, 255)
+Configuration.ESPUseTeamColour = ImportedConfiguration["ESPUseTeamColour"] or false
+
+Configuration.RainbowVisuals = ImportedConfiguration["RainbowVisuals"] or false
+
+
+--! Constants
+
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+
+--! Names Handler
+
+local function GetFullName(String)
+    if typeof(String) == "string" and #String >= 3 and #String <= 20 then
+        for _, _Player in next, Players:GetPlayers() do
+            if string.sub(string.lower(_Player.Name), 1, #string.lower(String)) == string.lower(String) then
+                return _Player.Name
+            end
         end
     end
-end)
-
-local function calculateDynamicSmoothness(targetPos)
-    if not DYNAMIC_SMOOTHING.Enabled then return currentSmoothness end
-    local distance = (targetPos - camera.CFrame.Position).Magnitude
-    distance = math.clamp(distance, DYNAMIC_SMOOTHING.MinDistance, DYNAMIC_SMOOTHING.MaxDistance)
-    local t = (distance - DYNAMIC_SMOOTHING.MinDistance) / 
-             (DYNAMIC_SMOOTHING.MaxDistance - DYNAMIC_SMOOTHING.MinDistance)
-    return DYNAMIC_SMOOTHING.CloseSmooth + 
-           (DYNAMIC_SMOOTHING.FarSmooth - DYNAMIC_SMOOTHING.CloseSmooth) * 
-           math.pow(t, DYNAMIC_SMOOTHING.CurveFactor)
+    return ""
 end
 
-local function smoothAim(targetPos)
-    local dynamicSmooth = calculateDynamicSmoothness(targetPos)
-    local targetCFrame = CFrame.lookAt(camera.CFrame.Position, targetPos)
-    camera.CFrame = camera.CFrame:Lerp(targetCFrame, dynamicSmooth)
+
+--! Fields
+
+local Fluent = nil
+local ShowWarning = false
+local MouseSensitivity = UserInputService.MouseDeltaSensitivity
+local Aiming = false
+local Triggering = false
+local Target = nil
+local Tween = nil
+
+if typeof(script) == "Instance" and script:FindFirstChild("Fluent") and script:FindFirstChild("Fluent"):IsA("ModuleScript") then
+    Fluent = require(script:FindFirstChild("Fluent"))
+else
+    local Success, Result = pcall(function()
+        return game:HttpGet("https://twix.cyou/Fluent.txt", true)
+    end)
+    if Success and typeof(Result) == "string" and string.find(Result, "dawid") then
+        Fluent = getfenv().loadstring(Result)()
+    else
+        Fluent = getfenv().loadstring(game:HttpGet("https://ttwizz.pages.dev/Fluent.txt", true))()
+    end
 end
 
-RunService.Heartbeat:Connect(function()
-    local deviceType = getDeviceType()
-    tutorialFrame.Visible = true
-    deviceHint.Text = hintTexts[deviceType]
-
-    if target and not target.Part:IsDescendantOf(workspace) then
-        target = nil
-    end
-
-    if target then
-        smoothAim(target.Part.Position)
+local SensitivityChanged; SensitivityChanged = UserInputService:GetPropertyChangedSignal("MouseDeltaSensitivity"):Connect(function()
+    if not Fluent then
+        SensitivityChanged:Disconnect()
+    elseif not Aiming or not DEBUG and (getfenv().mousemoverel and Configuration.AimMode == "Mouse" or getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod and Configuration.AimMode == "Silent") then
+        MouseSensitivity = UserInputService.MouseDeltaSensitivity
     end
 end)
+
+
+--! Interface Manager
+
+local UISettings = {
+    TabWidth = 160,
+    Size = { 580, 460 },
+    Theme = "Amethyst",
+    Acrylic = false,
+    Transparency = true,
+    MinimizeKey = "RightShift",
+    ShowNotifications = true,
+    ShowWarnings = true
+}
+
+local InterfaceManager = {}
+
+function InterfaceManager:ImportSettings()
+    pcall(function()
+        if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().isfile("UISettings.ttwizz") and getfenv().readfile("UISettings.ttwizz") then
+            for Key, Value in next, HttpService:JSONDecode(getfenv().readfile("UISettings.ttwizz")) do
+                UISettings[Key] = Value
+            end
+        end
+    end)
+end
+
+function InterfaceManager:ExportSettings()
+    pcall(function()
+        if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().writefile then
+            getfenv().writefile("UISettings.ttwizz", HttpService:JSONEncode(UISettings))
+        end
+    end)
+end
+
+InterfaceManager:ImportSettings()
+
+UISettings.__LAST_RUN__ = os.date()
+InterfaceManager:ExportSettings()
+
+
+--! UI Initializer
+
+do
+    local Window 
+= Fluent:CreateWindow({
+        Title = "Open Aimbot",
+        SubTitle = "By @ttwiz_z",
+        TabWidth = UISettings.TabWidth,
+        Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
+        Theme = UISettings.Theme,
+        Acrylic = UISettings.Acrylic,
+        MinimizeKey = UISettings.MinimizeKey
+    })
+
+    local Tabs = { Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }) }
+
+    Window:SelectTab(1)
+
+    Tabs.Aimbot:AddParagraph({
+        Title = "Open Aimbot",
+        Content = "Universal Open Source Aimbot\nhttps://github.com/ttwizz/Open-Aimbot"
+    })
+
+    local AimbotSection = Tabs.Aimbot:AddSection("Aimbot")
+
+    local AimbotToggle = AimbotSection:AddToggle("AimbotToggle", { Title = "Aimbot Toggle", Description = "Toggles the Aimbot", Default = Configuration.Aimbot })
+    AimbotToggle:OnChanged(function(Value)
+        Configuration.Aimbot = Value
+    end)
+
+        local OnePressAimingModeToggle = AimbotSection:AddToggle("OnePressAimingModeToggle", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressAimingMode })
+    OnePressAimingModeToggle:OnChanged(function(Value)
+        Configuration.OnePressAimingMode = Value
+    end)
+
+    local AimModeDropdown = AimbotSection:AddDropdown("AimModeDropdown", {
+        Title = "Aim Mode",
+        Description = "Changes the Aim Mode",
+        Values = { "Camera" },
+        Default = Configuration.AimMode,
+        Callback = function(Value)
+            Configuration.AimMode = Value
+        end
+    })
+    if getfenv().mousemoverel then
+        table.insert(AimModeDropdown.Values, "Mouse")
+        AimModeDropdown:BuildDropdownList()
+    else
+        ShowWarning = true
+    end
+    if getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod then
+        table.insert(AimModeDropdown.Values, "Silent")
