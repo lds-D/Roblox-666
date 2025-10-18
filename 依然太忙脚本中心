@@ -344,7 +344,7 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "99夜(Roblox_依然汉化)",
 	Default = false,
 	Callback = function()
