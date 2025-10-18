@@ -186,13 +186,6 @@ loadstring(game:HttpGet("https://gitee.com/cmbhbh/cmbh/raw/master/Bex.lua"))()
 })
 
 Tab:AddButton({
-	Name = "AC6",
-	Callback = function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
-  end
-})
-
-Tab:AddButton({
     Name = "控制NPC",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/fe-source/refs/heads/main/NPC/source/main.Luau"))()
