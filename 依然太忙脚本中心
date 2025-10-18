@@ -325,6 +325,14 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Tab:AddToggle({
+	Name = "99夜(Roblox_依然)",
+	Default = false,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/99%E5%A4%9C(Roblox_%E4%BE%9D%E7%84%B6)"))()
+	end
+})
+
 Tab:AddButton({
     Name = "99夜DARK中心(Kenny汉化)",
     Callback = function()
