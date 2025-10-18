@@ -204,6 +204,7 @@ Tab:AddButton({
 	Name = "AC6",
 	Callback = function()
 loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+  end
 })
 
 local Tab = Window:MakeTab({
