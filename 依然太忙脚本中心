@@ -193,6 +193,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/fe-sour
   end
 })
 
+Tab:AddButton({
+	Name = "AC6",
+	Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+})
+
 local Tab = Window:MakeTab({
 	Name = "娱乐脚本",
 	Icon = "rbxassetid://93566402708060",
