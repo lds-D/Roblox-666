@@ -196,7 +196,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/fe-sour
 Tab:AddButton({
 	Name = "AC6",
 	Callback = function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
 })
 
 local Tab = Window:MakeTab({
@@ -353,7 +353,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "99夜1(依然)",
 	Callback = function()
-https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/99%E5%A4%9C(Roblox_%E4%BE%9D%E7%84%B6%E6%B1%89%E5%8C%96)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lds-D/Roblox-/refs/heads/main/99%E5%A4%9C(Roblox_%E4%BE%9D%E7%84%B6%E6%B1%89%E5%8C%96)"))()
 	end
 })
 
@@ -401,7 +401,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "死铁轨脚本(中文)",
 	Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
   end
 })
 
