@@ -182,13 +182,14 @@ Tab:AddButton({
 	Name = "Dex汉化",
 	Callback = function()
 loadstring(game:HttpGet("https://gitee.com/cmbhbh/cmbh/raw/master/Bex.lua"))()
-	end
+  end
 })
 
 Tab:AddButton({
 	Name = "AC6",
 	Callback = function()
 loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+  end
 })
 
 Tab:AddButton({
