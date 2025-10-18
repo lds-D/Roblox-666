@@ -178,7 +178,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/yoursvexyyy/VEX-OP/re
   end
 })
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "Dex汉化",
 	Callback = function()
 loadstring(game:HttpGet("https://gitee.com/cmbhbh/cmbh/raw/master/Bex.lua"))()
