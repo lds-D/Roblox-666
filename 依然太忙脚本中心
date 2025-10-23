@@ -264,7 +264,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/6669178/main
 })
 
 Tab:AddButton({
-	Name = "名称",
+	Name = "零件环绕倾斜",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/cytj777i/Soul-Ring/main/零件环绕倾斜"))()
   end
