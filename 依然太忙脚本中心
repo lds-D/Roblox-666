@@ -13,14 +13,14 @@ print("反挂机开启")
 		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 		end)
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/dUiCrXYP"))()
-local Window = OrionLib:MakeWindow({Name = "依然太忙脚本中心", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用依然太忙脚本中心", ConfigFolder = "欢迎使用少羽中心"})
+local Window = OrionLib:MakeWindow({Name = "依然太忙脚本中心", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用依然太忙脚本中心", ConfigFolder = "演戏等于稳定"})
 local about = Window:MakeTab({
     Name = "公告",
     Icon = "rbxassetid://93566402708060",
     PremiumOnly = false
 })
 
-about:AddParagraph("公告", "禁止传播")
+about:AddParagraph("公告", "永久公益")
 about:AddParagraph("更新", "优化了一下脚本")
 about:AddParagraph("注意", "演戏等于稳定")
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
