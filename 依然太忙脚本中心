@@ -512,18 +512,22 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Section = Tab:AddSection({
+	Name = "脚本"
+})
+
 Tab:AddButton({
 	Name = "皮-河北唐县",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/Pi-script-Hebeitangxian.lua"))()
-   end
+  end
 })
 
 Tab:AddButton({
 	Name = "叶脚本河北唐县",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/YE%20SCRIPT-Tang%20County%2C%20Hebei.lua"))()
-   end
+  end
 })
 
 local Section = Tab:AddSection({
@@ -535,14 +539,14 @@ Tab:AddButton({
 	Callback = function()
 TANGXIAN = "卡车刷钱限时免费版"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoyi-boop/-/refs/heads/main/tangxianxianmian.lua",true))()
-   end
+  end
 })
 
 Tab:AddButton({
 	Name = "刷钱2",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoyi-boop/-/refs/heads/main/YItangxian.lua",true))()
-   end
+  end
 })
 
 local Tab = Window:MakeTab({
@@ -556,4 +560,49 @@ Tab:AddButton({
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/GoldenPakiFusion/refs/heads/main/Script"))()
   end
+})
+
+local Tab = Window:MakeTab({
+	Name = "种植花园",
+	Icon = "rbxassetid://93566402708060",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "推荐"
+})
+
+Tab:AddButton({
+	Name = "种植花园1",
+	Callback = function()
+loadstring(game:HttpGet("https://lunor.dev/loader"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园2",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/Main.lua"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园3",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园4",
+	Callback = function()
+loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
+  end
+})
+
+Tab:AddButton({
+	Name = "速度中心X[种植花园)",
+	Callback = function()
+loadstring（game：HttpGet（“https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua”， true）)(）
+   end
 })
