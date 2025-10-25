@@ -21,7 +21,7 @@ local about = Window:MakeTab({
 })
 
 about:AddParagraph("公告", "永久公益")
-about:AddParagraph("更新", "优化了一下脚本")
+about:AddParagraph("更新", "河北唐县")
 about:AddParagraph("注意", "演戏等于稳定")
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
 about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
@@ -479,31 +479,70 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-    Name = "门1(Kenny汉化)",
+    Name = "DOORS1(Kenny汉化)",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/VelocityX.lua"))()
   end
 })
 
 Tab:AddButton({
-    Name = "门2(Kenny汉化)",
+    Name = "DOORS2(Kenny汉化)",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/DOORS.lua"))()
   end
 })
 
 Tab:AddButton({
-    Name = "门3",
+    Name = "DOORS3",
     Callback = function()
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))() 
   end
 })
 
 Tab:AddButton({
-    Name = "门4",
+    Name = "DOORS4",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/Protected_2809220311826785.lua.txt"))()
   end
+})
+
+local Tab = Window:MakeTab({
+	Name = "河北唐县",
+	Icon = "rbxassetid://93566402708060",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "皮-河北唐县",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/Pi-script-Hebeitangxian.lua"))()
+   end
+})
+
+Tab:AddButton({
+	Name = "叶脚本河北唐县",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/YE%20SCRIPT-Tang%20County%2C%20Hebei.lua"))()
+   end
+})
+
+local Section = Tab:AddSection({
+	Name = "功能"
+})
+
+Tab:AddButton({
+	Name = "刷钱1",
+	Callback = function()
+TANGXIAN = "卡车刷钱限时免费版"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoyi-boop/-/refs/heads/main/tangxianxianmian.lua",true))()
+   end
+})
+
+Tab:AddButton({
+	Name = "刷钱2",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoyi-boop/-/refs/heads/main/YItangxian.lua",true))()
+   end
 })
 
 local Tab = Window:MakeTab({
