@@ -604,5 +604,29 @@ Tab:AddButton({
 	Name = "速度中心X[种植花园)",
 	Callback = function()
 loadstring（game：HttpGet（“https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua”， true）)(）
-   end
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园(TX)",
+	Callback = function()
+--[[BY退休]]
+TX = "退休脚本"
+QUN = "160369111"
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\54\52\68\99\116\76\77\53\47\114\97\119"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "MozilHub-V.5(油管搬运)(种植花园)",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GlazeScripts/MozilHub-V.5/refs/heads/main/GlazeHub.lua"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园(油管搬运)",
+	Callback = function()
+loadstring(game: HttpGet("https://raw.githubusercontent.com/Kenniel123/Grow-a-garden/refs/heads/main/Grow%20A%20Garden"))()
+  end
 })
