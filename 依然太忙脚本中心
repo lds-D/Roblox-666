@@ -46,7 +46,6 @@ Tab:AddButton({
     Name = "XA HUB",	
     Callback = function()
 loadstring(game:HttpGet("https://raw.gitcode.com/Xingtaiduan/Scripts/raw/main/Loader.lua"))()
---join QQ group:1029830580
   end
 })
 
@@ -68,7 +67,6 @@ Tab:AddButton({
     Name = "Rb脚本",	
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/refs/heads/main/Rb-Hub"))()
---join QQ group:1029830580
   end
 })
 
@@ -610,9 +608,6 @@ loadstring（game：HttpGet（“https://raw.githubusercontent.com/AhmadV99/Spee
 Tab:AddButton({
 	Name = "种植花园(TX)",
 	Callback = function()
---[[BY退休]]
-TX = "退休脚本"
-QUN = "160369111"
 loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\54\52\68\99\116\76\77\53\47\114\97\119"))()
   end
 })
