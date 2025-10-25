@@ -20,7 +20,7 @@ local about = Window:MakeTab({
     PremiumOnly = false
 })
 
-about:AddParagraph("公告", "永久公益")
+about:AddParagraph("公告", "永久公益,完全碾压市面上97%的缝合脚本")
 about:AddParagraph("更新", "河北唐县")
 about:AddParagraph("注意", "演戏等于稳定")
 about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
@@ -628,5 +628,33 @@ Tab:AddButton({
 	Name = "种植花园(油管搬运)",
 	Callback = function()
 loadstring(game: HttpGet("https://raw.githubusercontent.com/Kenniel123/Grow-a-garden/refs/heads/main/Grow%20A%20Garden"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园(要解卡)",
+	Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/d7be76c234d46ce6770101fded39760c.lua"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园(油管搬运)",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThundarZ/Welcome/main/Main/GaG/Main.lua"))()
+  end
+})
+
+Tab:AddButton({
+	Name = "种植花园(油管搬运)",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+  end
+})
+
+Tab:AddButton({
+	Name = "乌托邦种植花园",
+	Callback = function()
+loadstring(game:HttpGet("https://pastefy.app/eUAzqoCL/raw"))()
   end
 })
